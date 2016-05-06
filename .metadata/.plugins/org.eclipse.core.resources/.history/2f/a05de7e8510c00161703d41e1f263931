@@ -1,0 +1,29 @@
+
+
+object CountingChange {
+ if (!coins.isEmpty)
+if (money>coins.head) {
+  check(money,coins.tail)
+check(money-coins.head, coins)
+
+}
+
+else if (money<coins.head) {
+check(money,coins.tail)
+}
+else if (money-coins.head == 0) {
+totalAmount += 1
+}
+}
+check(money,coins.sorted)
+totalAmount
+
+}
+  
+    def main(args: Array[String]){
+  print(countChange(4 ,List(1,1,1)))
+  
+
+ 
+    }
+}

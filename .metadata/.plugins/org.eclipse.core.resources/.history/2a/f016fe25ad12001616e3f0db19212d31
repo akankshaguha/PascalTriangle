@@ -1,0 +1,49 @@
+
+
+object Fun {
+  
+  type Set = Int => Boolean
+  
+  
+  def contains(s: Set, elem: Int): Boolean = s(elem)
+  
+  def singletonSet(elem: Int): Set = (_ == elem)
+  
+  def union(s: Set, t: Set): Set = (a:Int) => s(a) | t(a)
+  
+  def intersection(s:Set,t:Set):Set =(a:Int)=>s(a)&t(a)
+  
+  def difference(s:Set,t:Set):Set=(a:Int)=>s(a) & !t(a)
+  
+  def filter(s:Set,t:Set):Set=(a:Int)=>s(a) & t(a)
+  
+ 
+  val bound = 1000
+  
+   def forall(s: Set, p: Int => Boolean): Boolean = {
+    def iter(a: Int): Boolean = {
+      if (a>bound) true
+      else if (contains(s,a)& !p(a)) false
+      else iter(a+1)
+    }
+    iter(-bound)
+  }
+  
+  def addition(s:Set,t:Set):Set=(a:Int)=>s(a)+t(a)
+
+    def exists(s: Set, p: Int => Boolean): Boolean = forall(s,x=>p(x))
+  
+  def main(args:Array[String]){
+  
+  println(contains(singletonSet(1),1))
+  println(contains(union(Set(1,2),Set(2,3)),1))
+  println(contains(intersection(Set(1,2),Set(2,3)),2))
+  println(contains(difference(Set(1,2),Set(2,3,5)),1))
+  println(contains(filter(Set(1,2),Set(2,3)),2))
+  println(forall(Set(1,1000),x=>true))
+  
+  
+  }
+  
+ 
+}

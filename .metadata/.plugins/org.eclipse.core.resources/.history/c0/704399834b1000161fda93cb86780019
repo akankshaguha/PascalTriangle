@@ -1,0 +1,46 @@
+package com.bitwise.currying
+
+
+ 
+
+object productoffact extends App {
+  println("Welcome to the Scala worksheet")
+ val x= new Rational(2,5)
+ x.numer;
+ x.denom;
+ val y = new Rational(1,8)
+ y.add(x)
+ println(y)
+val z=x.neg
+println(z)
+ 
+}
+
+
+
+  class Rational(x:Int, y:Int) extends Equals{
+
+ def numer = x;
+ def denom = y;
+ 
+ 
+ 
+ def add(that:Rational){
+new Rational(numer*that.denom,denom*that.numer)
+ }
+ 
+ 
+ 
+ def neg=
+ new Rational(-numer,denom)
+
+
+def sub(that:Rational)=new Rational(numer*that.denom,denom*that.numer)
+
+    def canEqual(other: Any) = {
+   other.isInstanceOf[com.bitwise.currying.Rational]
+ }
+override def toString = numer +"/"+denom
+
+}
+

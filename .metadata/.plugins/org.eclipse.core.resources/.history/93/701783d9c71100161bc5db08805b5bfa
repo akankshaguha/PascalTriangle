@@ -1,0 +1,37 @@
+
+
+object Fun {
+  
+  type Set = Int => Boolean
+  
+  
+  def contains(s: Set, elem: Int): Boolean = s(elem)
+  
+  def singletonSet(elem: Int): Set = (_ == elem)
+  
+  def union(s: Set, t: Set): Set = (e) => s(e) || t(e)
+  
+  def intersection(s:Set,t:Set):Set =(e:Int)=> s(e)&&t(e)
+  
+  def difference(s:Set,t:Set):Set=(e:Int)=> s(e) && !t(e)
+  
+  def filter(s:Set,t:Set):Set=(a)=>s(a)&&t(a)
+  val bound = 1000 
+  
+   def forall(s: Set, p: Int => Boolean): Boolean = { 
+     def iter(a: Int): Boolean = { 
+       if (a > bound) true 
+       else if (contains(s, a) && !p(a)) false 
+       else iter(a+1) 
+     } 
+     iter(-bound) 
+   } 
+  
+  
+  def main(args:Array[String]){
+  //  println(contains(singletonSet(1),1))
+    println(contains(union(Set(1,2),Set(2,3)),1))
+    println(union(singletonSet(1),singletonSet(3)))
+  }
+
+}

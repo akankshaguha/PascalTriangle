@@ -1,0 +1,16 @@
+
+
+object queryandtransformation {
+  
+ def contains(s: Set, elem: Int): Boolean = s(elem)
+ type Set = Int => Boolean
+    def forall(s: Set, p: Int => Boolean): Boolean = {
+        
+    def iter(a: Int): Boolean = {
+      if (a > b) true
+      else if (contains(s, a)) p(a) && iter(a + 1)
+      else iter(a + 1)
+    }
+    iter(-b)
+  }
+}

@@ -1,0 +1,26 @@
+
+
+object Pascaltriangle{
+
+def fact(a:Int):Int = {
+  if(a<=0) 1
+  else a*fact(a-1)
+}
+  def pascal(n:Int,k:Int):Int={
+   if(k==0 || k==n)
+     1
+   else
+     pascal(k,n-1)+pascal(k-1,n-1)
+  }
+  
+  def main(args:Array[String]){
+   /* for(r <-0 to 10){
+      for(c <- 0 to r){
+        print(pascal(r,c) +"")
+      }*/
+      println(pascal(1,2))
+   // }
+   
+
+  }
+}

@@ -1,0 +1,11 @@
+package com.bitwise.collection
+
+object arrays {
+  def main(args:Array[String]){
+  var array : Array[Integer] = new Array[Integer](3);
+  
+  array.apply(0);
+  array.apply(2);
+  print(array);
+  }
+}

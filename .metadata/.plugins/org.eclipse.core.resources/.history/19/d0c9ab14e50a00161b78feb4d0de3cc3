@@ -1,0 +1,11 @@
+package com.bitwise.collection
+
+object arrays {
+  
+  var array : Array[Integer] = new Array[Integer](3);
+  
+  array.apply(12);
+  array.apply(11);
+  print(array);
+  
+}

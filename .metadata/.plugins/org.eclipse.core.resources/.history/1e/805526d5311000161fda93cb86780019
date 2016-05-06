@@ -1,0 +1,17 @@
+package com.bitwise.Rationale
+
+object rationalworksheet {
+  println("Welcome to the Scala worksheet")
+ val x= new Rationals(2,5)
+ x.numer;
+ x.denom;
+}
+
+
+class Rationals(x:Int,y:Int){
+
+ def numer = x;
+ def denom = y;
+
+
+}

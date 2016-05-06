@@ -1,0 +1,8 @@
+object factorialworksheet {
+  println("Welcome to the Scala worksheet")
+  
+  def fact(a:Int)={
+  def calculate(a:Int,count,Int):Int={
+  if(n==0) 1 else
+  n * fact()
+  }

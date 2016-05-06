@@ -1,0 +1,35 @@
+
+
+object parenthesesbalancing {
+   
+  def main(args: Array[String]) {
+    println("balanced: '(if (zero? x) max (/ 1 x))' is balanced"+isBalancing("(if (zero? x) max (/ 1 x))".toList))
+    println(isBalancing("() ).\n( )".toList))
+    println(isBalancing(":-))".toList))
+    println(balance("(fdfsd)".toList))
+   
+  }
+  
+   def isBalancing(chars: List[Char]): String = {
+    val sentence: String = (for(i <- chars) yield(i))(collection.breakOut)
+    if(balance(chars)) "The string '" + sentence + "' is balanced."
+    else "The string '" + sentence + "' is not balanced."
+  }
+  def balance(chars: List[Char]): Boolean = {
+  
+    def isParanthesesbalanced(chars: List[Char], count: Int): Boolean = {
+        if (chars.isEmpty) count == 0
+            else if (chars.head == '(')
+                 isParanthesesbalanced(chars.tail,count+1)
+            else if (chars.head == ')')
+                 count>0 && isParanthesesbalanced(chars.tail,count-1)
+            else isParanthesesbalanced(chars.tail,count)
+             
+            
+    }
+  
+    isParanthesesbalanced(chars,0)
+  
+ }
+
+}

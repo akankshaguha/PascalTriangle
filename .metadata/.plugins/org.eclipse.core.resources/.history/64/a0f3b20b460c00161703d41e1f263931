@@ -1,0 +1,11 @@
+object countingchangeworksheet {
+  println("Welcome to the Scala worksheet")
+  
+  
+  def check(money: Int, coins: List[Int]) {
+if (!coins.isEmpty)
+if (money>coins.head) {
+check(money-coins.head, coins)
+check(money,coins.tail)
+}
+}

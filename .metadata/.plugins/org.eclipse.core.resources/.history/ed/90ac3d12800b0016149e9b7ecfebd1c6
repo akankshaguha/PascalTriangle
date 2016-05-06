@@ -1,0 +1,26 @@
+
+
+object CountingChange {
+  def countChange(money: Int, coins: List[Int]): Int = {
+var totalAmount = 0;
+def check(money: Int, coins: List[Int]) {
+if (!coins.isEmpty)
+if (money>coins.head) {
+check(money-coins.head, coins)
+check(money,coins.tail)
+}
+else if (money<coins.head) {
+check(money,coins.tail)
+}
+else if (money-coins.head == 0) {
+totalAmount += 1
+}
+}
+check(money,coins.sorted)
+totalAmount
+}
+  
+  def main(args:Array[String]){
+    print(countChange(100,[7]))
+  }
+}

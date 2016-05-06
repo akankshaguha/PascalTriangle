@@ -1,0 +1,9 @@
+package com.bitwise.currying
+
+object Factorial {
+  
+  
+  def sum ()
+  
+  
+}

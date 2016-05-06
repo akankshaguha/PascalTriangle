@@ -1,0 +1,33 @@
+
+
+object parenthesesbalancing {
+   def balance(exp: List[Char]): Unit={
+     
+   def validationOfString(exp:List[Char],count:Int):Unit ={
+     if (exp.isEmpty)
+       count
+     else if(exp.head == '(')
+       validationOfString(exp.tail,count+1)
+       else if (exp.head == ')')
+         validationOfString(exp.tail,count-1)
+         else
+           validationOfString(exp.tail,count)
+   if(exp.count(_.equals('('))== exp.count (_.equals(')') )){
+     validationOfString(exp,0) == 0
+   }
+   else
+   {
+     print("noy")
+   }
+       
+   
+        
+   }
+     
+   }
+    
+  def main(args:Array[String])={
+   print( balance("(if (zero? x) max (/ 1 x))".toList))
+   print(balance("()(".toList))
+  }
+}

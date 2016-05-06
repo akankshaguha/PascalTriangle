@@ -1,0 +1,11 @@
+
+
+object parenthesesbalancing {
+   def balance(chars: List[Char]): Unit={
+     
+   }
+    
+  def main(args:Array[String])={
+   print( balance("(if (zero? x) max (/ 1 x))".toList))
+  }
+}

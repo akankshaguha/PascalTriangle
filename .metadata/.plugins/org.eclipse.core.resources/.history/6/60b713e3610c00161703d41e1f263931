@@ -1,0 +1,3 @@
+object factorialworksheet {
+  println("Welcome to the Scala worksheet")
+}

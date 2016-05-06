@@ -1,0 +1,25 @@
+package com.bitwise.Rationale
+
+
+  class Rationals(x:Int,y:Int){
+
+ def numer = x;
+ def denom = y;
+ 
+ 
+ 
+ def add(that:Rationals){
+new Rationals(numer*that.denom,denom*that.numer)
+ }
+ 
+ 
+ 
+ def neg(that:Rationals){
+ new Rationals(-numer,denom)
+}
+
+
+
+def sub(that:Rationals)=new Rationals(numer*that.denom,denom*that.numer)
+
+}

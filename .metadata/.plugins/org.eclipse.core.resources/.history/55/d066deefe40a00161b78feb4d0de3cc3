@@ -1,0 +1,7 @@
+package com.bitwise.collection
+
+object arrays {
+  
+  var array : Array[Integer] = new Array[Integer](3);
+  
+}

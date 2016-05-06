@@ -1,0 +1,43 @@
+
+
+object queryandtransformation  {
+  
+ def contains(s: Set, elem: Int): Boolean = s(elem)
+ type Set = Int => Boolean
+ def singletonSet(elem: Int): Set = (_==elem)//Singleton
+ 
+ 
+  def union(s: Set, t: Set): Set = (e: Int) => s(e) || t(e)         //union
+  
+  def intersect(s:Set, t:Set):Set =(e:Int) =>s(e) && t(e)           //intersection
+  
+  def difference(s:Set,t:Set):Set=(e:Int)=>s(e) && !t(e)           //difference
+  
+  def filter(s:Set,t:Set):Set = (e:Int)=>s(e)&& t(e)               //filter
+  
+ val bound=10000
+    def forall(s: Set, p: Int => Boolean): Boolean = {
+        
+    def iter(a: Int): Boolean = {
+      if (a>bound) true
+      else if (contains(s, a)) p(a) && iter(a + 1)
+      else iter(a + 1)
+    }
+    iter(-bound)
+  }
+  def exists(s: Set, p: Int => Boolean): Boolean = !forall(s, (x => !p(x)))
+ 
+ 
+def map(s: Set, f: Int => Int): Set = (e:Int) => exists(s, (x => f(x) == e))
+
+ def main(args:Array[String]){
+//  println(contains(Set(1),1)) 
+//  
+//  println(contains(singletonSet(1),1))
+ println(union(Set(2,3),Set(2)))
+ println(intersect(Set(3,1),Set(2,1,3)))
+ 
+  
+ }
+
+}

@@ -1,0 +1,7 @@
+object pascalworksheet {
+  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
+  def fact(a:Int):Int = {
+  if(a<=0) 1
+  else a*fact(a-1)
+}
+}

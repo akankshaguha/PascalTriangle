@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.buildship.ui.wizard.project.creation">
+		<item value="LOCAL_INSTALLATION" key="gradle_distribution_type"/>
+		<item value="true" key="use_default_location"/>
+		<item value="C:\Balajee (Assignment_Feedbacks)\gradle-2.7" key="gradle_distribution_configuration"/>
+		<item value="C:\Users\AkankshaG\workspace_Scala\week2assignment" key="project_location"/>
+	</section>
+</section>
